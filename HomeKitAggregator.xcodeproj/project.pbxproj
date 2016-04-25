@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35205B931CCEAAFB00A7750A /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35205B921CCEAAFB00A7750A /* HomeKit.framework */; };
 		35F8E53E1CCE70DB005B1918 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F8E53D1CCE70DB005B1918 /* AppDelegate.swift */; };
 		35F8E5401CCE70DB005B1918 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F8E53F1CCE70DB005B1918 /* ViewController.swift */; };
 		35F8E5431CCE70DB005B1918 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35F8E5411CCE70DB005B1918 /* Main.storyboard */; };
@@ -102,6 +103,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		35205B911CCEAAFB00A7750A /* HomeKitAggregator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HomeKitAggregator.entitlements; sourceTree = "<group>"; };
+		35205B921CCEAAFB00A7750A /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
 		35F8E53A1CCE70DB005B1918 /* HomeKitAggregator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeKitAggregator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35F8E53D1CCE70DB005B1918 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35F8E53F1CCE70DB005B1918 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +193,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35205B931CCEAAFB00A7750A /* HomeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +217,7 @@
 		35F8E5311CCE70DB005B1918 = {
 			isa = PBXGroup;
 			children = (
+				35205B921CCEAAFB00A7750A /* HomeKit.framework */,
 				35F8E53C1CCE70DB005B1918 /* HomeKitAggregator */,
 				35F8E5541CCE70DB005B1918 /* HomeKitAggregatorTests */,
 				35F8E55F1CCE70DB005B1918 /* HomeKitAggregatorUITests */,
@@ -233,6 +238,7 @@
 		35F8E53C1CCE70DB005B1918 /* HomeKitAggregator */ = {
 			isa = PBXGroup;
 			children = (
+				35205B911CCEAAFB00A7750A /* HomeKitAggregator.entitlements */,
 				35F8E56E1CCE71A5005B1918 /* Favorites */,
 				35F8E5711CCE71A5005B1918 /* Homes */,
 				35F8E5B21CCE71A5005B1918 /* Supporting Files */,
@@ -533,6 +539,18 @@
 				TargetAttributes = {
 					35F8E5391CCE70DB005B1918 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = HJ323MUWXQ;
+						SystemCapabilities = {
+							com.apple.HomeKit = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					35F8E5501CCE70DB005B1918 = {
 						CreatedOnToolsVersion = 7.3;
@@ -809,10 +827,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HomeKitAggregator/HomeKitAggregator.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Raeid Saqur (LAQSBUU2AR)";
 				INFOPLIST_FILE = HomeKitAggregator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.raeid.mobile.HomeKitAggregator;
+				PRODUCT_BUNDLE_IDENTIFIER = com.raeid.HomeKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -820,10 +842,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HomeKitAggregator/HomeKitAggregator.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Raeid Saqur (HJ323MUWXQ)";
 				INFOPLIST_FILE = HomeKitAggregator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.raeid.mobile.HomeKitAggregator;
+				PRODUCT_BUNDLE_IDENTIFIER = com.raeid.HomeKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -892,6 +918,7 @@
 				35F8E5671CCE70DB005B1918 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		35F8E5681CCE70DB005B1918 /* Build configuration list for PBXNativeTarget "HomeKitAggregatorTests" */ = {
 			isa = XCConfigurationList;
@@ -900,6 +927,7 @@
 				35F8E56A1CCE70DB005B1918 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		35F8E56B1CCE70DB005B1918 /* Build configuration list for PBXNativeTarget "HomeKitAggregatorUITests" */ = {
 			isa = XCConfigurationList;
@@ -908,6 +936,7 @@
 				35F8E56D1CCE70DB005B1918 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
